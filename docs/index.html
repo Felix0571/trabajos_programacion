@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>Calculo IMC</TITLE>
+		<STyle>
+			        body {
+            background-image: url('https://media.tenor.com/rDaL8QUGAyoAAAAM/reeyarn-ballin.gif');
+            background-size: cover;
+            color: rgb(0, 255, 42); 
+            font-family: Arial, sans-serif; 
+        }
+		</STyle>
+	</HEAD>
+	<BODY>
+		<center>
+		<h1>Calculadora de Perfección ft. Patrulla Roja</h1>
+		<form action="" onsubmit="calcular_imc(event)">
+			
+			<input type="number" name="altura" id="altura" onchange="calcular_imc(event)">
+			<input type="number" name="peso" id="peso" onchange="calcular_imc(event)">
+			<button type="submit"> Calcular Perfección</button>
+		</form>
+		<h2 id="resu"></h2>
+		<img id="imagen_imc" src="">
+	</center>
+			<SCRIPT type="text/javascript">
+
+			function calcular_imc(event) {
+				event.preventDefault();
+				var altura;
+				var peso;
+				altura = document.getElementById("altura").value;
+				peso = document.getElementById("peso").value;
+				imc = peso/(altura*altura);
+				document.getElementById("resu").innerText = imc;
+				
+				cell = document.getElementById("imagen_imc");
+				if (imc < 25) {
+					cell.setAttribute("src","src/img/perfecto.png")
+				}else if (imc > 25 && imc < 30){
+					cell.setAttribute("src","src/img/termo.png")
+				}
+			}
+			
+		</SCRIPT>
+	</BODY>
+</HTML>

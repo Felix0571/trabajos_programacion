@@ -2,30 +2,33 @@
 <HTML>
 	<HEAD>
 		<TITLE>Calculo IMC</TITLE>
-		<STyle>
-			        body {
-            background-image: url('https://media.tenor.com/rDaL8QUGAyoAAAAM/reeyarn-ballin.gif');
-            background-size: cover;
-            color: rgb(0, 255, 42); 
-            font-family: Arial, sans-serif; 
-        }
-		</STyle>
+		<link rel="stylesheet" href="src/css/estilo.css">
 	</HEAD>
 	<BODY>
 		<center>
-		<h1>Calculadora de Perfección ft. Patrulla Roja</h1>
+
+
+		<h1>Calculadora de Perfección</h1>
 		<form action="" onsubmit="calcular_imc(event)">
+			<div class="cont">
+				<label for="altura">Altura</label>
+				<input type="number" name="altura" id="altura" name="altura" >
 			
-			<input type="number" name="altura" id="altura" onchange="calcular_imc(event)">
-			<input type="number" name="peso" id="peso" onchange="calcular_imc(event)">
+			
+			</div>
+			<div class="cont">
+				<label for="peso">Peso</label>
+				<input type="number" name="peso" id="peso" name="peso">
+			</div>
 			<button type="submit"> Calcular Perfección</button>
 		</form>
 		<h2 id="resu"></h2>
+		<img id="der" src="src/img/Cell de las esquinas.jpg" alt="Cell2" height="645" width="280"> 
+		<img id="izq" src="src/img/Cell de las esquinas.jpg" alt="Cell1" height="645" width="280">
 		<img id="imagen_imc" src="">
 	</center>
-			<SCRIPT type="text/javascript">
-
-			function calcular_imc(event) {
+	<SCRIPT type="text/javascript">
+	function calcular_imc(event) {
 				event.preventDefault();
 				var altura;
 				var peso;
@@ -35,13 +38,17 @@
 				document.getElementById("resu").innerText = imc;
 				
 				cell = document.getElementById("imagen_imc");
-				if (imc < 25) {
+				if (imc <= 25 && imc >= 18) {
 					cell.setAttribute("src","src/img/perfecto.png")
-				}else if (imc > 25 && imc < 30){
-					cell.setAttribute("src","src/img/termo.png")
+				}else if (imc <= 18){
+					cell.setAttribute("src","src/img/venezuela.png")
+				}else if (imc >= 26 && imc < 30){
+					cell.setAttribute("src","src/img/cell2.png")
 				}
 			}
 			
 		</SCRIPT>
-	</BODY>
+
+</script>
+</BODY>
 </HTML>

@@ -12,13 +12,13 @@
 		<form action="" onsubmit="calcular_imc(event)">
 			<div class="cont">
 				<label for="altura">Altura</label>
-				<input type="number" name="altura" id="altura" name="altura" >
+				<input type="number" name="altura" id="altura" name="altura" autofocus>
 			
 			
 			</div>
 			<div class="cont">
 				<label for="peso">Peso</label>
-				<input type="number" name="peso" id="peso" name="peso">
+				<input type="number" name="peso" id="peso" name="peso" required>
 			</div>
 			<button type="submit"> Calcular Perfección</button>
 		</form>
@@ -32,7 +32,7 @@
 				event.preventDefault();
 				var altura;
 				var peso;
-				altura = document.getElementById("altura").value;
+				altura = document.getElementById("altura").value/100;
 				peso = document.getElementById("peso").value;
 				imc = peso/(altura*altura);
 				document.getElementById("resu").innerText = imc;
@@ -42,9 +42,15 @@
 					cell.setAttribute("src","src/img/perfecto.png")
 				}else if (imc <= 18){
 					cell.setAttribute("src","src/img/venezuela.png")
-				}else if (imc >= 26 && imc < 30){
+				}else if (imc >= 26 && imc <= 29){
 					cell.setAttribute("src","src/img/cell2.png")
-				}
+				}else if (imc >= 30 && imc <= 35)
+				    cell.setAttribute("src","src/img/cell1.png")
+			    else if (imc >= 36 && imc <= 39)
+				    cell.setAttribute("src","src/img/termo.png")
+				else if (imc = 40)
+				    cell.setAttribute("src","src/img/cell3.png")
+
 			}
 			
 		</SCRIPT>

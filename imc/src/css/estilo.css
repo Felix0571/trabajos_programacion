@@ -1,0 +1,28 @@
+body {
+    background-image: url('https://media.tenor.com/rDaL8QUGAyoAAAAM/reeyarn-ballin.gif');
+    background-size: cover;
+    color: rgb(0, 255, 42); 
+    font-family: Arial, sans-serif; 
+}
+.cont{
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    text-align: start;
+}
+.cont > label{
+    display: inline-block;
+}
+.cont > input{
+    display: block;
+}
+img#izq {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+img#der {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
